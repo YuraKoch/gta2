@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.bg-wrap {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.left-bg {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 1200px;
+  background: url("./img/bg-left.png") repeat-y;
+}
+
+.center-bg,
+.right-bg {
+  display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+  .right-bg {
+    display: block;
+    flex-grow: 1;
+    background: url("./img/bg-right.png") repeat-y;
+  }
+}
+
+@media only screen and (min-width: 2400px) {
+  .right-bg {
+    width: 1200px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  .center-bg {
+    display: block;
+    flex-grow: 1;
+    background: url("./img/bg-center.png") repeat;
+  }
+}
+
+.score-wrap {
+  position: fixed;
+  top: max(10px, 1vmax);
+  left: max(10px, 1vmax);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: max(16px, 1.6vmax);
+  font-weight: bold;
+  color: #961e25;
+  background-color: #231f20;
+  padding: max(2px, 0.2vmax) max(8px, 0.8vmax);
+  border-radius: max(2px, 0.2vmax);
+  user-select: none;
+}
+
+.wasted {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 450px;
+}
