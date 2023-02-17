@@ -2,18 +2,18 @@ import { Particle } from "./particle.js";
 import { sinBetweenTwoPoints, cosBetweenTwoPoints } from "./utilities.js";
 
 export class Enemy {
-  constructor(canvas, context, player) {
+  constructor(canvasWidth, canvasHeight, context, player) {
     this.context = context;
     this.player = player;
 
     this.radius = 15;
 
     if (Math.random() < 0.5) {
-      this.x = Math.random() < 0.5 ? 0 - this.radius : canvas.width + this.radius;
-      this.y = Math.random() * canvas.height;
+      this.x = Math.random() < 0.5 ? 0 - this.radius : canvasWidth + this.radius;
+      this.y = Math.random() * canvasHeight;
     } else {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() < 0.5 ? 0 - this.radius : canvas.height + this.radius;
+      this.x = Math.random() * canvasWidth;
+      this.y = Math.random() < 0.5 ? 0 - this.radius : canvasHeight + this.radius;
     }
 
     const enemyType = Math.random() > 0.8 ? 2 : 1;
