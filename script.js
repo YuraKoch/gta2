@@ -53,16 +53,16 @@ function createProjectile(event) {
 };
 
 function spawnEnemies() {
-  let conutOfSpawnEnemies = 1;
+  let countOfSpawnEnemies = 1;
 
-  countIntervalId = setInterval(() => conutOfSpawnEnemies++, 30000);
-  spawnIntervalId = setInterval(() => spawnCountEnemies(conutOfSpawnEnemies), 1000);
+  countIntervalId = setInterval(() => countOfSpawnEnemies++, 30000);
+  spawnIntervalId = setInterval(() => spawnCountEnemies(countOfSpawnEnemies), 1000);
 
-  spawnCountEnemies(conutOfSpawnEnemies)
+  spawnCountEnemies(countOfSpawnEnemies)
 }
 
-function spawnCountEnemies(conut) {
-  for (let i = 0; i < conut; i++) {
+function spawnCountEnemies(count) {
+  for (let i = 0; i < count; i++) {
     enemies.push(new Enemy(canvas.width, canvas.height, context, player));
   }
 }
